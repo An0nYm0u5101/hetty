@@ -19,7 +19,7 @@ COPY admin/ .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN yarn run export
 
-FROM alpine:3.12
+FROM alpine:3.13.7
 WORKDIR /app
 COPY --from=go-builder /app/hetty .
 COPY --from=node-builder /app/dist admin
